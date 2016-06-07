@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+function bootstrap {
+  local shome="${_minimal_block_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
+  source "$shome/script/profile"
+
+  pkg ensure devel/git 
+}
+
+bootstrap
