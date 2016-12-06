@@ -4,7 +4,9 @@ function bootstrap {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  pkg ensure devel/git 
+  pkg ensure devel/git-base
+  pkg ensure devel/git-contrib
+  pkg ensure devel/git-docs
 }
 
 bootstrap
