@@ -2,7 +2,7 @@
 
 function _git_profile {
   local shome="${_minimal_block_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
-  PATH="$shome/exec:$PATH"
+  PATH="$shome/bin:$shome/exec:$PATH"
 }
 
 _git_profile
