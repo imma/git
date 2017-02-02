@@ -7,6 +7,8 @@ function bootstrap {
   pkg ensure devel/git-base
   pkg ensure devel/git-contrib
   pkg ensure devel/git-docs
+
+  block compile bundler
 }
 
 bootstrap
