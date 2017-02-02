@@ -9,6 +9,7 @@ function bootstrap {
   pkg ensure devel/git-docs
 
   block compile bundler
+  ln -nfs ../vendor/bundle/bin/gcli "$shome/bin/gcli"
 }
 
 bootstrap
