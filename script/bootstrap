@@ -10,6 +10,9 @@ function bootstrap {
 
   block compile bundler
   ln -nfs ../vendor/bundle/bin/gcli "$shome/bin/gcli"
+
+  block compile npm
+  ln -nfs ../node_modules/.bin/gh "$shome/bin/gh"
 }
 
 bootstrap
