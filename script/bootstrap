@@ -8,7 +8,7 @@ function bootstrap {
   pkg ensure devel/git-contrib
   pkg ensure devel/git-docs
 
-  block compile npm
+  block compile yarn
   ln -nfs ../node_modules/.bin/gh "$shome/bin/gh"
 }
 
