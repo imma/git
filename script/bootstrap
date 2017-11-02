@@ -4,9 +4,16 @@ function bootstrap {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  pkg ensure devel/git-base
-  pkg ensure devel/git-contrib
-  pkg ensure devel/git-docs
+  case "${DISTRIB_ID}" in
+    Darwin)
+      brew install git
+      ;;
+    *)
+      pkg ensure devel/git-base
+      pkg ensure devel/git-contrib
+      pkg ensure devel/git-docs
+      ;;
+  esac
 
   block compile yarn
   ln -nfs ../node_modules/.bin/gh "$shome/bin/gh"
