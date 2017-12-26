@@ -17,7 +17,7 @@ function main {
       ;;
   esac
 
-  if ! type -P gh >/dev/null; then
+  if [[ -x "$shome/bin/gh" ]]; then
     return 1
   fi
 
