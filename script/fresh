@@ -4,18 +4,9 @@ function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  case "${DISTRIB_ID}" in
-    Darwin)
-      if [[ ! -x "${BOARD_PATH}/homebrew/bin/git" ]]; then
-        return 1
-      fi
-      ;;
-    *)
-      if [[ ! -x "$PKG_HOME/install/bin/git" ]]; then
-        return 1
-      fi
-      ;;
-  esac
+  if [[ ! -x "$PKG_HOME/install/bin/git" ]]; then
+    return 1
+  fi
 
   if [[ -x "$shome/bin/gh" ]]; then
     return 1
